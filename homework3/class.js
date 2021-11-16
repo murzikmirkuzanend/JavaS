@@ -19,14 +19,14 @@ for ( i = 0; i < 10; i++){
 
 i = 0;
 while (i < 10)
-{   if( i % 2 === 0)
+{   if( i % 2 === 1)
     console.log(number[i]);
     i++;
 }*/
 
 /*  //4. перебрати циклом for та вивести  числа тільки з непарним індексом
 for (let i = 0; i < 10; i++) {
-    if (i % 2 === 0) {
+    if (i % 2 === 1) {
         console.log(number[i])
     }
 }*/
@@ -35,7 +35,7 @@ for (let i = 0; i < 10; i++) {
 /*   //5. перебрати циклом while та вивести  числа тільки парні  значення
 i = 0;
 while (i < 10)
-{   if( i % 2 === 1)
+{   if( i % 2 === 0)
    console.log(number[i]);
    i++;}
 */
@@ -43,7 +43,7 @@ while (i < 10)
 /*   //6. перебрати циклом for та вивести  числа тільки парні  значення
 
 for (let i = 0; i < number.length; i++){
-   if( i % 2 === 1){
+   if( i % 2 === 0){
        console.log(number[i])
    }
 }*/
@@ -78,7 +78,7 @@ for (let i = number.length - 1; i >= 0; i--){
 //3. перебрати циклом while та вивести  числа тільки з непарним індексом
 let i = number.length-1;
 while (i >= 0){
-    if (i % 2 === 0)
+    if (i % 2 === 1)
         console.log(number[i])
     i--;
 }*/
@@ -86,20 +86,20 @@ while (i >= 0){
 /*
 //4. перебрати циклом for та вивести  числа тільки з непарним індексом
 for (let i = number.length - 1; i >= 0; i--) {
-    if (i % 2 === 0)
+    if (i % 2 === 1)
         console.log(number[i])
         }*/
 /*
 //5. перебрати циклом while та вивести  числа тільки парні  значення
 let i = number.length - 1;
 while (i >= 0) {
-    if (i % 2 === 1)
+    if (i % 2 === 0)
         console.log(number[i])
     i--;
         }*/
 /*//6. перебрати циклом for та вивести  числа тільки парні  значення
 for (let i = number.length - 1; i >= 0; i--) {
-    if (i % 2 === 1)
+    if (i % 2 === 0)
         console.log(number[i])
 }*/
 /*
