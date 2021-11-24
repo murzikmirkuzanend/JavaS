@@ -124,27 +124,29 @@ console.log(random(25))*/
 
 /*
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
-let masiv = []
 const random = (randomaizer) => {
-    for (let i = 0; i < 50; i++) {
+let masiv = []
+    for (let i = 0; i < randomaizer; i++) {
         masiv[i] = Math.round(Math.random() * 100)
     }
-    return randomaizer;
+    return masiv;
 }
 
-document.write(random(masiv))
+document.write(random(15))
+
 */
 
-
-/*// - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
-let masiv = []
+/*
+// - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.
 const random = (randomaizer, limit) => {
-    for (let i = 0; i < 50; i++) {
+    let masiv = []
+    for (let i = 0; i < randomaizer; i++) {
         masiv[i] = Math.round(Math.random() * limit)
     }
     return masiv;
 }
-document.write(random(1, 25))*/
+document.write(random(1, 25))
+*/
 
 
 /*
