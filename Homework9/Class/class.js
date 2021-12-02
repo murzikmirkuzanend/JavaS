@@ -37,13 +37,45 @@ let simpsons = [
     },
 ];
 // Проітерувати його, створиши для кожного елементу масиву <div class='member'>.
+// for (const users of simpsons) {
+//     let div = document.createElement('div');
+//     div.classList.add('member');
+//     div.innerText = `${users.name}${users.info} ${users.age}${users.surname} `;
+//     let img = document.createElement('img');
+//     img.src = users.photo;
+//     div.appendChild(img)
+//     document.body.appendChild(div)
+//
+// }
 
-
+/*
 // - взяти попередній масив з сімпсонами.
-    // Проітерувати його, створиши для кожного елементу масиву <div class='member'>. Для кожної властивості елементу створити окремий блок, та помістити його у div.member
+// Проітерувати його, створиши для кожного елементу масиву <div class='member'>. Для кожної властивості елементу створити окремий блок, та помістити його у div.member
+
+for (const user of simpsons ){
+    let div = document.createElement('div');
+    div.classList.add('member');
+    let div1 = document.createElement('div');
+    div1.innerText = user.name;
+    let div2 = document.createElement('div');
+    div2.innerText = user.surname;
+    let div3 = document.createElement('div');
+    div3.innerText = user.age;
+    let div4 = document.createElement('div');
+    div4.innerText = user.info
+    let img = document.createElement('img');
+    img.src = user.photo;
+    div.appendChild(div1);
+    div.appendChild(div2);
+    div.appendChild(div3);
+    div.appendChild(div4);
+    div.appendChild(img);
+    document.body.appendChild(div);
+}
+*/
 
 // - Є масив
-/*let coursesArray = [
+let coursesArray = [
     {
         title: 'JavaScript Complex',
         monthDuration: 5,
@@ -111,6 +143,32 @@ let simpsons = [
         hourDuration: 909,
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
-];*/
-// Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+];
+// Створити для кожного елементу масиву свій блок, блок розділити блоками,
+// в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список
+// з елементами
 // Приклад структири знаходиться у файлі example.png
+
+for(const cors of coursesArray){
+    let div = document.createElement('div');
+    let hederDiv = document.createElement('div');
+    hederDiv.innerText = cors.title;
+    let thoDiv = document.createElement('div');
+    let monthDiv = document.createElement('div');
+    monthDiv.innerText = cors.monthDuration;
+    monthDiv.style.width = '25%'
+    let hourDiv = document.createElement('div');
+    hourDiv.innerText = cors.hourDuration;
+    hourDiv.style.width = '75%'
+    thoDiv.appendChild(monthDiv);
+    thoDiv.appendChild(hourDiv);
+    thoDiv.style.display = 'flex'
+    let divElement = document.createElement('div');
+    divElement.innerText = cors.modules;
+    div.appendChild(hederDiv);
+    div.appendChild(thoDiv);
+    div.appendChild(divElement);
+    document.body.appendChild(div);
+
+    
+}
