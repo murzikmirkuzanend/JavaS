@@ -60,8 +60,8 @@ let coursesAndDurationArray = [
 
 
 for (const cours of coursesAndDurationArray){
-    let DivElement = document.createElement('div');
-    DivElement.innerText = `${cours.title} ${cours.monthDuration}`;
+    let divElement = document.createElement('div');
+    divElement.innerText = `${cours.title} ${cours.monthDuration}`;
     document.body.appendChild(DivElement);
 }
 
