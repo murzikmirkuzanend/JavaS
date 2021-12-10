@@ -33,8 +33,6 @@ let models = (modelCars, typeCars, volumeCars) => {
     carTip.push({model,type,volume});
     localStorage.setItem(kayCar, JSON.stringify(carTip));
 };
-    bur.onclick= () =>{
+bur.onclick= () =>{
     models(model.value, type.value,volume.value);
-    };
-
-//sssssssaaasdasdasdasdawdawdawdawddawdawdawdawdawddawd
+};
