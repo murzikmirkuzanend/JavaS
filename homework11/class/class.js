@@ -15,3 +15,22 @@ let users = [
 // створити під кожен об'єкт свій блок з конопкою "додати до улюблених"
 // при натисканні на яку об'єкт потрапляє до масиву favorites улюблених обраних об'єктів в локальному сховищі.
 // Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
+
+
+const favoritesKey = 'favorites';
+// localStorage.setItem(favoritesKey, JSON.stringify([]));
+
+for (const user of users) {
+    let div = document.createElement('div');
+    div.innerText = JSON.stringify(user);
+    let btn = document.createElement('button');
+    btn.innerText = 'Натисни щоб додати!!';
+    btn.onclick = () => {
+        let favorites = JSON.parse(localStorage.getItem(favoritesKey) || []);
+        favorites.push(user);
+        localStorage.setItem(favoritesKey, JSON.stringify(favorites));
+    }
+    div.appendChild(btn);
+    document.body.appendChild(div);
+}
+
