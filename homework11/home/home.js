@@ -27,15 +27,14 @@ let model = document.forms.cars.model;
 let type = document.forms.cars.type;
 let volume = document.forms.cars.volume;
 let bur = document.getElementById('bur');
-let kay = 'kay';
-let models = (carsModel, carsType, carsVolume) => {
-    let car = {
-        model: carsModel,
-        type: carsType,
-        volume: carsVolume
+let kayCar = 'kayCar';
+let models = (modelCars, typeCars, volumeCars) => {
+    let carTip = JSON.parse(localStorage.getItem(kayCar)) || [];
+    carTip.push({model,type,volume});
+    localStorage.setItem(kayCar, JSON.stringify(carTip));
+};
+    bur.onclick= () =>{
+    models(model.value, type.value,volume.value);
     };
-    localStorage.setItem(key, JSON.stringify(car));
-};
-bur.onclick = () => {
-    models(model.value, type.value, volume.value)
-};
+
+//sssssssaaasdasdasdasdawdawdawdawddawdawdawdawdawddawd
