@@ -1,0 +1,17 @@
+/*<!--index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.-->*/
+.body{
+    display: flex;
+    justify-content: center;
+}
+.usersDivPhaser{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.divBorder{
+    display: block;
+    margin: 15px;
+    border: 2px solid black;
+    background: cadetblue;
+    color: lawngreen;
+}
