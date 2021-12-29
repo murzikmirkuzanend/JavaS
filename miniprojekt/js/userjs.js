@@ -7,52 +7,56 @@
 let url = new URL(location.href);
 let idUser = url.searchParams.get('id');
 fetch('https://jsonplaceholder.typicode.com/users/' + idUser)
-    .then(uses => uses.json())
-    .then(uses => {
+    .then(uses => {return uses.json()})
+    .then(usesr => {
+
         let htmlDivElement = document.createElement('div');
         htmlDivElement.classList.add('divheder');
         let divElement = document.createElement('div');
         divElement.classList.add('divMax');
-        divElement.innerText = `
-            ID: ${uses.id}, 
-            Name: ${uses.name},
-            Username: ${uses.username},
-            email: ${uses.email},
-            address: ${uses.address.street},
-            suite: ${uses.address.suite},
-            city: ${uses.address.city},
-            zipcode ${uses.address.zipcode},
-            geo.lat: ${uses.address.geo.lat},
-           geo.lng: ${uses.address.geo.lng},
-           phone: ${uses.phone},
-           website: ${uses.website},
-           company: ${uses.company.name},
-           ${uses.company.catchPhrase},
-            ${uses.company.bs}
-            `;
+        divElement.innerText = `${usesr.id}
+Name: ${usesr.name}
+Username: ${usesr.username}
+email: ${usesr.email}
+ address: ${usesr.address.street}
+suite: ${usesr.address.suite}
+city: ${usesr.address.city}
+zipcode ${usesr.address.zipcode}
+ geo.lat: ${usesr.address.geo.lat}
+geo.lng: ${usesr.address.geo.lng}
+phone: ${usesr.phone}
+website: ${usesr.website}
+company: ${usesr.company.name}
+${usesr.company.catchPhrase}
+${usesr.company.bs}
+   `;
+
         let btn = document.createElement('button');
         btn.innerText = 'post of current user'
         btn.onclick = () => {
-            fetch('https://jsonplaceholder.typicode.com/posts/' + idUser)
-                .then(post => post.json())
+            fetch(`https://jsonplaceholder.typicode.com/users/` + usesr.id + `/posts`)
+                .then(uses => uses.json())
                 .then(response => {
+                    for (const resp of response) {
 
-                    if (uses.id === response.id) {
                         let diveElement = document.createElement('div');
                         diveElement.classList.add('btnDiv');
-                        diveElement.innerText = `title: ${response.title}`;
+                        diveElement.innerText = `title: ${resp.title}`;
                         htmlDivElement.appendChild(diveElement);
                     }
                     btn.disabled = true;
                     let documElA = document.createElement('a');
                     documElA.classList.add('elementA');
-                    documElA.href = 'post-details.html?id=' + response.id;
+                    documElA.href = 'post-details.html?id=' + usesr.id;
                     documElA.innerText = 'Деталі!'
                     htmlDivElement.appendChild(documElA)
-                })
+
+                    })
+
         }
 
         htmlDivElement.appendChild(btn)
         htmlDivElement.appendChild(divElement);
         document.body.appendChild(htmlDivElement);
-    })
+
+        })

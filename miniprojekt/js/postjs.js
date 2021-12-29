@@ -2,13 +2,12 @@
 // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации -
 // https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
-
-
 let url = new URL(location.href);
 let idUser = url.searchParams.get('id');
 fetch('https://jsonplaceholder.typicode.com/posts/' + idUser)
-    .then(posts => posts.json())
+    .then(uses =>   uses.json())
     .then(post => {
+
         let divPostElement = document.createElement('div');
         divPostElement.classList.add('postDiv');
         let detalisDivElement = document.createElement('div');
@@ -22,20 +21,23 @@ body: ${post.body}
         let comentsBtn = document.createElement('button');
         comentsBtn.innerText = 'Натисни щоб побачити Коментарі!!!';
         comentsBtn.onclick = () => {
-            fetch('https://jsonplaceholder.typicode.com/comments/' + idUser)
+            fetch(`https://jsonplaceholder.typicode.com/posts/` + post.id + `/comments`)
                 .then(coments => coments.json())
                 .then(respons => {
-                    if (post.id === respons.id) {
+                    for (const open of respons) {
+
+
                         let comentDivElement = document.createElement("div");
                         comentDivElement.classList.add('comentDiv');
-                        comentDivElement.innerText = ` postId: ${respons.postId},
-                id: ${respons.id},
-                name: ${respons.name},
-                email: ${respons.email},
-                body: ${respons.body}
+                        comentDivElement.innerText = ` postId: ${open.postId},
+                id: ${open.id},
+                name: ${open.name},
+                email: ${open.email},
+                body: ${open.body}
                 `
                         divPostElement.appendChild(comentDivElement);
                     }
+
                     comentsBtn.disabled = true;
                     let backToStart = document.createElement('a');
                     backToStart.classList.add('back');
@@ -49,4 +51,5 @@ body: ${post.body}
         divPostElement.appendChild(comentsBtn);
         divPostElement.appendChild(detalisDivElement);
         document.body.appendChild(divPostElement);
+
     })
