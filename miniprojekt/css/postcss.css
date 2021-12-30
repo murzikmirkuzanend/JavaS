@@ -1,2 +1,52 @@
 /*<!--post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.-->*/
 /*<!--Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)-->*/
+
+
+body {
+    background: url(https://img2.akspic.ru/originals/1/4/8/2/0/102841-pustynya-ozero-dikaya_mestnost-prirodnyj_zapovednik-voda-1920x1080.jpg) no-repeat center/cover;
+    height: 900px;
+    display: block;
+}
+.divPostElement{
+    display: block;
+}
+.detalisDiv{
+    margin-left: 700px;
+    background: rgba(8, 124, 239, 0.2);
+    box-shadow: 10px -10px 50px rgb(255 255 0 / 80%);
+    border: 2px solid #2b2c2f;
+    border-radius: 25px;
+    color: white;
+    width: 538px;
+    margin-top: -35px;
+}
+.heder{
+    margin: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 1767px;
+    justify-content: space-between;
+}
+.btn{
+    color: white;
+    height: 36px;
+    width: 182px;
+    background: rgba(8, 124, 239, 0.2);
+    box-shadow: 10px -10px 50px rgba(255, 255, 0, 0.8);
+    border: 2px solid #2b2c2f;
+}
+.comentDiv{
+    color: white;
+    margin: 15px;
+    background: rgba(8, 124, 239, 0.2);
+    box-shadow: 10px -10px 50px rgba(255, 255, 0, 0.8);
+    border: 2px solid #2b2c2f;
+}
+.back{
+    color: white;
+    margin-top: -750px;
+    background: rgba(8, 124, 239, 0.2);
+    box-shadow: 10px -10px 50px rgba(255, 255, 0, 0.8);
+    border: 2px solid #2b2c2f;
+}

@@ -4,10 +4,16 @@
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
 //     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 //     которая имеет детальную информацию про текущий пост.
+
+let heder = document.createElement('div');
+heder.classList.add('heder');
+
 let url = new URL(location.href);
 let idUser = url.searchParams.get('id');
 fetch('https://jsonplaceholder.typicode.com/users/' + idUser)
-    .then(uses => {return uses.json()})
+    .then(uses => {
+        return uses.json()
+    })
     .then(usesr => {
 
         let htmlDivElement = document.createElement('div');
@@ -31,32 +37,42 @@ ${usesr.company.catchPhrase}
 ${usesr.company.bs}
    `;
 
+
+
+        let divHederBtn = document.createElement('div');
+        divHederBtn.classList.add('divBtnHeder');
         let btn = document.createElement('button');
+        btn.classList.add('btn')
         btn.innerText = 'post of current user'
+
         btn.onclick = () => {
             fetch(`https://jsonplaceholder.typicode.com/users/` + usesr.id + `/posts`)
                 .then(uses => uses.json())
                 .then(response => {
                     for (const resp of response) {
 
+
+
                         let diveElement = document.createElement('div');
                         diveElement.classList.add('btnDiv');
                         diveElement.innerText = `title: ${resp.title}`;
-                        htmlDivElement.appendChild(diveElement);
-                    }
-                    btn.disabled = true;
-                    let documElA = document.createElement('a');
-                    documElA.classList.add('elementA');
-                    documElA.href = 'post-details.html?id=' + usesr.id;
-                    documElA.innerText = 'Деталі!'
-                    htmlDivElement.appendChild(documElA)
+                        divHederBtn.appendChild(diveElement);
 
-                    })
+                        btn.disabled = true;
+                        let documElA = document.createElement('a');
+                        documElA.classList.add('elementA');
+                        documElA.href = 'post-details.html?id=' + resp.id;
+                        documElA.innerText = 'Деталі!'
+                        diveElement.appendChild(documElA)
+                        heder.appendChild(divHederBtn)
+                    }
+
+                })
 
         }
 
-        htmlDivElement.appendChild(btn)
+        heder.appendChild(btn)
         htmlDivElement.appendChild(divElement);
         document.body.appendChild(htmlDivElement);
-
-        })
+        document.body.appendChild(heder)
+    })

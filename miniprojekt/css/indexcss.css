@@ -1,17 +1,37 @@
 /*<!--index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.-->*/
-.body{
-    display: flex;
-    justify-content: center;
+
+.heder{
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/94/Desert_Electric.jpg) no-repeat center/cover;
+    margin-top: -1102px;
+    margin-left: -8px;
+    height: 2000px;
+    width: 2000px;
+
 }
+
 .usersDivPhaser{
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-wrap: wrap;
+    width: 1217px;
+    padding-left: 350px;
+    padding-top: 1202px;
+
 }
 .divBorder{
     display: block;
-    margin: 15px;
-    border: 2px solid black;
-    background: cadetblue;
-    color: lawngreen;
+    margin: 25px;
+    border: 2px solid #2b2c2f;
+    background: rgba(180, 176, 17, 0.24);
+    color: yellow;
+    box-shadow: 10px -10px 50px rgba(190, 35, 58, 0.6);
+    border-radius: 25px;
+    height: 100px;
+
 }
+.hrefka{
+    display: block;
+    color: yellow;
+}
+

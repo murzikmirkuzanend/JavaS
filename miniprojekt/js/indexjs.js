@@ -5,6 +5,13 @@
 // <!--2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.-->
 // <!--3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html, которая имеет детальную информацию про объект на который кликнули-->
 
+
+
+
+
+let heder = document.createElement('div');
+heder.classList.add('heder');
+
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(uses => uses.json())
     .then(someUser => {
@@ -14,14 +21,17 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let element = document.createElement('div');
             element.classList.add('divBorder');
             element.innerText = `
-            <h1>ID: ${userChek.id}</h1>
-            <h2>Name: ${userChek.name}</h2>`;
+           ID: ${userChek.id}
+           Name: ${userChek.name}`;
             let userDetalis = document.createElement('a');
+            userDetalis.classList.add('hrefka')
             userDetalis.href = 'user-details.html?id=' + userChek.id;
             userDetalis.innerText = 'Натисни щоб перейти та дізнатись детальну інфу!!!'
             element.appendChild(userDetalis)
             divElement.appendChild(element);
-            document.body.appendChild(divElement);
+            heder.appendChild(divElement)
         }
     })
+
+document.body.appendChild(heder)
 
