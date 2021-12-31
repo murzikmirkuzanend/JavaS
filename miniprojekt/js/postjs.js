@@ -12,7 +12,7 @@ let idUser = url.searchParams.get('id');
 fetch('https://jsonplaceholder.typicode.com/posts/' + idUser)
     .then(uses => uses.json())
     .then(post => {
-        // for (const resp of post) {
+
         let divPostElement = document.createElement('div');
         divPostElement.classList.add('postDiv');
         let detalisDivElement = document.createElement('div');
@@ -28,7 +28,7 @@ body: ${post.body}
         comentsBtn.classList.add('btn');
         comentsBtn.innerText = 'Натисни щоб побачити Коментарі!!!';
         comentsBtn.onclick = () => {
-            fetch(`https://jsonplaceholder.typicode.com/posts/` + post.id + `/comments`)
+            fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
                 .then(coments => coments.json())
                 .then(respons => {
                     for (const open of respons) {
